@@ -1,14 +1,21 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <NavMenu />
     <main>
-        <div class="valorant user px-4" style="background-color: transparent; display: flex; justify-content:end; height: 3.5rem; align-items: center">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">Logged in User</a>
+        <div>
+            <img src="img/chamber.svg" class="global-background">
         </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
+        <div class="valorant user px-4" style="background-color: transparent; display: flex; justify-content:space-between; height: 3.5rem; align-items: center">
+            <a class="navbar-brand" href="/">HeadHunter</a>
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">Logged in User</a>
+        </div>
+        <div class="d-flex">
+            <NavMenu />
+            <article class="content px-4">
+                @Body
+            </article>
+        </div>
+        
     </main>
 </div>
