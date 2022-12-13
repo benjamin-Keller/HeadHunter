@@ -1,0 +1,34 @@
+﻿@use "sass:map";
+@use 'variables' as v;
+
+body {
+    background-color: map.get(v.$colors, "background");
+    color: map.get(v.$colors, "primary");
+}
+
+.red-primary-text {
+    color: map.get(v.$colors, "primary") !important;
+}
+.red-primary-background {
+    color: map.get(v.$colors, "primary") !important;
+}
+.red-secondary-text {
+    color: map.get(v.$colors, "secondary") !important;
+}
+
+.red-secondary-background {
+    color: map.get(v.$colors, "secondary") !important;
+}
+.valorant,
+.valorant a {
+    color: map.get(v.$colors, "primary") !important;
+    font-family: 'VALORANT', sans-serif;
+    text-decoration: none !important;
+}
+.valorant.user {
+    background-color: transparent;
+    display: flex;
+    justify-content: end;
+    height: 3.5rem;
+    align-items: center
+}
