@@ -1,0 +1,9 @@
+﻿@use "sass:map";
+@use 'variables' as v;
+
+.home-card {
+    background: rgba(0,0,0,0.8);
+    border: 2px solid map.get(v.$colors, "secondary");
+    border-radius: 1rem;
+    max-height: 380px;
+}
