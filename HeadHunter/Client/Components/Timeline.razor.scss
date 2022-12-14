@@ -1,0 +1,36 @@
+﻿@use "sass:map";
+@use 'variables' as v;
+
+.timeline {
+    list-style-type: none;
+    position: relative;
+}
+
+.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+
+.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.timeline > li:before {
+    content: ' ';
+    background: map.get(v.$colors, "background");
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid map.get(v.$colors, "secondary");
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}

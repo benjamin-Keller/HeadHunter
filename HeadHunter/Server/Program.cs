@@ -1,3 +1,4 @@
+using HeadHunter.Server.Services;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<HttpClient>();
+builder.Services.AddTransient<EventsService>();
 
 var app = builder.Build();
 

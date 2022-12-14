@@ -1,9 +1,32 @@
 ﻿@use "sass:map";
 @use 'variables' as v;
 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.8);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: map.get(v.$colors, "primary");
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: map.get(v.$colors, "primary");
+}
+
 body {
     background-color: map.get(v.$colors, "background");
     color: map.get(v.$colors, "primary");
+    overflow-x: hidden;
+}
+
+.home-card {
+    background: rgba(0,0,0,0.8);
+    border: 2px solid map.get(v.$colors, "secondary");
+    border-radius: 1rem;
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
 .red-primary-text {
@@ -15,7 +38,9 @@ body {
 .red-secondary-text {
     color: map.get(v.$colors, "secondary") !important;
 }
-
+.secondary-text {
+    color: #d7d7d7;
+}
 .red-secondary-background {
     color: map.get(v.$colors, "secondary") !important;
 }

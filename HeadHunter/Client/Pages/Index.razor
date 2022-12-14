@@ -1,7 +1,15 @@
 ﻿@page "/"
+@using HeadHunter.Client.Components
 
 <PageTitle>Index</PageTitle>
 
 <h1 class="valorant">Welcome!</h1>
+<p class="secondary-text">Welcome to your new app.</p>
 
-<p class="red-secondary-text">Welcome to your new app.</p>
+<div class="row">
+    <div class="col-sm-12 col-md-6 home-card">
+        <Timeline Title="Events" Events="@EventData.Data" />
+    </div>
+    <div class="col-sm-12 col-md-6"></div>
+</div>
+
