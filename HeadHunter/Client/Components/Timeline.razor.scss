@@ -43,12 +43,30 @@
     &:hover {
         padding-left: 2rem;
         font-weight: bold;
+
+        &:before {
+            border: 5px solid map.get(v.$colors, "primary");
+        }
     }
 }
 
 .timeline > li:before {
     content: ' ';
     background: map.get(v.$colors, "background");
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid map.get(v.$colors, "secondary");
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+
+.timeline.active > li:before {
+    content: ' ';
+    background: map.get(v.$colors, "secondary");
     display: inline-block;
     position: absolute;
     border-radius: 50%;
