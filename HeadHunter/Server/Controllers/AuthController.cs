@@ -17,7 +17,7 @@ namespace HeadHunter.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Authenticate([FromForm] RiotUser riotUser)
+        public async Task<IActionResult> Authenticate([FromBody] RiotUser riotUser)
         {
             var userInfo = await _service.AuthenticateAsync(riotUser);
             return Ok(userInfo);

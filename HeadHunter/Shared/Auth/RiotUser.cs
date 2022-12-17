@@ -2,6 +2,6 @@
 
 public class RiotUser
 {
-    public string Username { get; set; } = "Nerrrry";
-    public string Password { get; set; } = "Ben102030*";
+    public string Username { get; set; }
+    public string Password { get; set; }
 }
