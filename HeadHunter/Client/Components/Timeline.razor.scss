@@ -64,7 +64,7 @@
 }
 
 
-.timeline.active > li:before {
+.timeline > li.active:before {
     content: ' ';
     background: map.get(v.$colors, "secondary");
     display: inline-block;
