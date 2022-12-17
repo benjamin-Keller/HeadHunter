@@ -1,8 +1,7 @@
-﻿namespace HeadHunter.Shared.Auth
+﻿namespace HeadHunter.Shared.Auth;
+
+public class RiotUser
 {
-    public class RiotUser
-    {
-        public string Username { get; set; } = "Nerrrry";
-        public string Password { get; set; } = "Ben102030*";
-    }
+    public string Username { get; set; } = "Nerrrry";
+    public string Password { get; set; } = "Ben102030*";
 }
