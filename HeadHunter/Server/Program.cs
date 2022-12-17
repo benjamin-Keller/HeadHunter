@@ -1,4 +1,5 @@
 using HeadHunter.Server.Services;
+using HeadHunter.Server.Services.Auth;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<HttpClient>();
 builder.Services.AddTransient<EventsService>();
+builder.Services.AddTransient<AuthService>();
+builder.Services.AddTransient<AuthHandler>();
 
 var app = builder.Build();
 
