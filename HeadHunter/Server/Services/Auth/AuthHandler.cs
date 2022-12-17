@@ -12,9 +12,8 @@ namespace HeadHunter.Server.Services.Auth
     public class AuthHandler
     {
         private readonly AuthenticationJsonClient _client;
-        private readonly HttpClient _httpClient;
 
-        public AuthHandler(HttpClient httpClient)
+        public AuthHandler()
         {
             _client = new AuthenticationJsonClient
             {
@@ -22,7 +21,6 @@ namespace HeadHunter.Server.Services.Auth
             };
             _client.DefaultRequestHeaders.Add("User-Agent", "RiotClient/62.0.1.4852117.4789131 rso-auth (Windows;11;;Professional, x64)");
             _client.DefaultRequestHeaders.Add("X-Curl-Source", "Api");
-            _httpClient = httpClient;
         }
 
         public async Task<(string AuthRequest, IEnumerable<Cookie> CookiesCollection, string AccessToken)> HandleAuthAsync(RiotUser user)
