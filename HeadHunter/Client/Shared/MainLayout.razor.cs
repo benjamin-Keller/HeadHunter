@@ -12,11 +12,6 @@ public partial class MainLayout
     {
         Username = GetUsername();
     }
-    private object GetUsername()
-    {
-        if (StateContainer.User is null)
-            return "Login";
-        else 
-            return StateContainer.User.Acct.GameName;
-    }
+
+    private string GetUsername() => StateContainer.GetUsername();
 }

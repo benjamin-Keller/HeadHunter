@@ -26,4 +26,11 @@ public class StateContainer
         NotifyStateChanged();
     }
 
+    public string GetUsername()
+    {
+        if (User is not null)
+            return $"{User.Acct.GameName}#{User.Acct.TagLine}";
+        else
+            return "Login";
+    }
 }
