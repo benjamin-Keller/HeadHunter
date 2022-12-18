@@ -1,4 +1,6 @@
-﻿.page {
+﻿@use 'variables' as v;
+
+.page {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -17,6 +19,7 @@ main {
 
     .content {
         flex: 1 0 auto;
+        height: calc(100vh - v.$appbar-height);
     }
 }
 

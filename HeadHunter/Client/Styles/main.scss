@@ -7,6 +7,10 @@ body {
     overflow-x: hidden;
 }
 
+#app {
+    height: 100vh;
+}
+
 .red-primary-text {
     color: map.get(v.$colors, "primary") !important;
 }
@@ -34,4 +38,18 @@ body {
     justify-content: end;
     height: 3.5rem;
     align-items: center
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+
+.home-card {
+    background: rgba(0,0,0,0.8);
+    border: 2px solid map.get(v.$colors, "secondary");
+    border-radius: 1rem;
+    max-height: 380px;
 }

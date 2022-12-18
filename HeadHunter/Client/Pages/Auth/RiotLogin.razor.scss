@@ -1,0 +1,12 @@
+﻿.login-form {
+    & .form-group, & .form-check {
+        padding-bottom: 0.5rem;
+    }
+}
+
+.validation-summary {
+    & dl, & ol, & ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,31 @@
+﻿@page "/auth/login"
+
+<div class="d-flex justify-content-center">
+    <div class="home-card p-3 absolute-center" style="width: 370px">
+        <EditForm Model="@User" OnValidSubmit="@OnValidLoginSubmit">
+            <DataAnnotationsValidator />
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="txtUsername">Username</label>
+                    <InputText @bind-Value="User.Username" class="form-control" id="txtUsername" placeholder="Enter Username" />
+                </div>
+                <div class="form-group">
+                    <label for="txtPassword">Password</label>
+                    <InputText @bind-Value="User.Password" class="form-control" id="txtPassword" placeholder="Enter Password" type="password" />
+                </div>
+                <div class="form-check">
+                    <InputCheckbox @bind-Value="User.RememberMe" class="form-check-input" id="chkRememberMe" />
+                    <label class="form-check-label" for="chkRememberMe">Remember Me</label>
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="validation-summary">
+                        <ValidationSummary />
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>

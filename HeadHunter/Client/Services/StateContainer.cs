@@ -19,9 +19,11 @@ public class StateContainer
 
     public async Task GetUserInfo(RiotUser riotUser)
     {
-        var userRequest = await _httpClient.PostAsJsonAsync<RiotUser>("api/auth", riotUser);
+        var userRequest = await _httpClient.PostAsJsonAsync("api/auth", riotUser);
         if (userRequest.IsSuccessStatusCode)
             User = JsonConvert.DeserializeObject<UserInfo>(await userRequest.Content.ReadAsStringAsync());
+
+        NotifyStateChanged();
     }
 
 }

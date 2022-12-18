@@ -1,4 +1,7 @@
-﻿namespace HeadHunter.Shared.Auth;
+﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+
+namespace HeadHunter.Shared.Auth;
 
 public class UserInfo
 {
@@ -16,6 +19,8 @@ public class UserInfo
     public int Age { get; set; }
     public string Jti { get; set; }
     public Affinity Affinity { get; set; }
+
+    public Entitlement Entitlement { get; set; }
 }
 
 public class Pw
@@ -37,5 +42,11 @@ public class Acct
 
 public class Affinity
 {
-    public string Pp { get; set; }
+    [JsonProperty("pp")]
+    public string Region { get; set; }
+}
+
+public class Entitlement
+{
+    public string EntitlementsToken { get; set; }
 }

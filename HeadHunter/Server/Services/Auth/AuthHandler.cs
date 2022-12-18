@@ -43,7 +43,7 @@ namespace HeadHunter.Server.Services.Auth
                 user.Username,
                 user.Password,
                 type = "auth",
-                remember = "true"
+                remember = user.RememberMe
             };
             var authRequestResult = await _client.PutAsync<object>(new Uri("https://auth.riotgames.com/api/v1/authorization"), auth, cookies: authCookies);
             var authResult = await authRequestResult.Message.Content.ReadAsStringAsync();
@@ -60,13 +60,12 @@ namespace HeadHunter.Server.Services.Auth
             return Enumerable.Empty<Cookie>();
         }
 
-        public async Task<(string, string)> GetEntitlementAsync(string accessToken, IEnumerable<Cookie> cookieCollection)
+        public async Task<Entitlement> GetEntitlementAsync(string accessToken, IEnumerable<Cookie> cookieCollection)
         {
             _client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
             var entitlementRequestResult = await _client.PostAsync<object>(new Uri("https://entitlements.auth.riotgames.com/api/token/v1"), new { }, cookies: cookieCollection);
 
-            var entitlementResult = await entitlementRequestResult.Message.Content.ReadAsStringAsync();
-            return (entitlementResult, Regex.Match(entitlementResult, @"access_token=(.+?)&scope=").Groups[1].Value);
+            return new Entitlement { EntitlementsToken = ((entitlementRequestResult.Value.ToString().Split("\":\""))[1].Split("\"}"))[0] };
         }
 
         public async Task<UserInfo> GetUserInfo()
